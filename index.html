@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liezer Tadeja Mendoza | IT Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d1117;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 260px;
+      height: 100vh;
+      background: #161b22;
+      padding: 30px 20px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px auto;
+      border: 3px solid #2ea043;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .sidebar p {
+      text-align: center;
+      font-size: 13px;
+      opacity: .7;
+      margin-bottom: 30px;
+    }
+
+    .nav-item {
+      padding: 12px 15px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .nav-item:hover { background: #21262d; }
+
+    /* Sliding Panels */
+    .panel {
+      position: fixed;
+      right: -100%;
+      top: 0;
+      width: 70%;
+      height: 100vh;
+      background: #0d1117;
+      overflow-y: auto;
+      padding: 50px;
+      transition: .4s ease;
+      border-left: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .panel.open { right: 0; }
+
+    .panel h1 { margin-bottom: 20px; font-size: 32px; }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover { color: #2ea043; transform: scale(1.1); }
+
+    .card {
+      background: #161b22;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .top-images {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.top-images img {
+  width: 180px;
+  border-radius: 12px;
+  border: 2px solid #2ea043;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #161b22;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: .3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  background: #1d222a;
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #2ea043;
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #2ea043;
+}
+
+.project-card p {
+  font-size: 15px;
+  opacity: .8;
+  margin-bottom: 12px;
+}
+
+.project-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #238636;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: .3s;
+}
+
+.project-btn:hover {
+  background: #2ea043;
+}
+
+
+
+    .card h2 { margin-bottom: 10px; font-size: 20px; color: #2ea043; }
+
+    ul { padding-left: 20px; }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <img src="Screenshot 2025-11-21 184902.png" class="profile-pic" />
+    <h2>Liezer Tadeja Mendoza</h2>
+    <p>ADVANCE DEVELOPMENT AND EMERGING TECHNOLOGY PORTFOLIO</p>
+
+    <div class="nav-item" onclick="openPanel('homePanel')">🏠 Home</div>
+    <div class="nav-item" onclick="openPanel('aboutPanel')">👤 About Me</div>
+    <div class="nav-item" onclick="openPanel('skillsPanel')">💻 Skills</div>
+    <div class="nav-item" onclick="openPanel('projectsPanel')">📦 Projects</div>
+    <div class="nav-item" onclick="openPanel('contactPanel')">📞 Contact</div>
+  </div>
+
+  <!-- HOME PANEL -->
+  <div id="homePanel" class="panel">
+    <span class="close-btn" onclick="closePanel()">✖</span>
+    <h1>Welcome</h1>
+    <div class="card">
+      <h2>Who Am I?</h2>
+      <p>   I’m Liezer Tadeja Mendoza: a motivated and passionate individual from Mamburao in Occidental Mindoro.
+          At 21, I’m focused on growth, learning, and building a meaningful future. I'm always eager
+          to explore new chances to improve and contribute.</p>
+    </div>
+    <div class="card">
+      <h2>Basic Information</h2>
+      <p><strong>Age:</strong> 21</p>
+      <p><strong>Birthday:</strong> April 26, 2004</p>
+      <p><strong>Location:</strong> Mamburao, Occidental Mindoro</p>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="aboutPanel" class="panel">
+    <span class="close-btn" onclick="closePanel()">✖</span>
+    <h1>About Me</h1>
+<div class="card">
+  <h2>Background</h2>
+
+  <div class="top-images">
+    <img src="music-morality-neurosinces.jpg">
+    <img src="OIP (1).webp">
+    <img src="OIP.webp">
+    <img src="depositphotos_459771096-stock-illustration-energetic-hard-working-hardworking-icon.jpg  ">
+
+
+  </div>
+
+  <p>I am a hardworking and dedicated person who gives my full effort in everything I do. I have a strong analytical mindset, allowing me to understand problems clearly and find effective solutions. I’m also someone who enjoys music deeply—it inspires me, helps me think, and keeps me balanced. Along with that, I have a creative side; I appreciate art and love expressing ideas through design and visual work.
+Overall, I am a motivated, thoughtful, and creative individual who is always looking for ways to grow and improve.</p>
+</div>
+<div class="card">
+  <h2>Sports</h2>
+
+  <div class="top-images">
+    <img src="cycling.jpg">
+    <img src="depositphotos_459771096-stock-illustration-energetic-hard-working-hardworking-icon.jpg">
+    <img src="OIP.webp">
+  </div>
+
+  <p>I am someone who finds passion and purpose in cycling, pushing myself to stay active, disciplined, and determined both on and off the road. I naturally analyze everything around me—whether it’s planning, decision-making, or understanding situations deeply, I always aim to think critically and choose the best path forward. I also have a creative side that comes out through art, where I express my ideas visually and appreciate the beauty in design and creativity.
+Overall, I am an observant, active, and artistic individual who constantly strives for growth in both mind and body.</p>
+</div>
+
+
+
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skillsPanel" class="panel">
+    <span class="close-btn" onclick="closePanel()">✖</span>
+    <h1>Skills Overview</h1>
+    <div class="card">
+      <h2>Technical Skills</h2>
+      <ul>
+<div class="card">
+  <h2>Basic Computer Troubleshooting</h2>
+
+  <div class="top-images">
+    <img src="OIP (2).webp">
+  </div>
+
+
+       
+  <h2>Software Installation & Setup</h2>
+
+  <div class="top-images">
+    <img src="Computer-Troubleshooting-768x461.jpg">
+
+      </ul>
+    </div>
+    
+     <div class="card">
+      <h2>Soft Skills</h2>
+      <ul>
+<div class="card">
+  <h2>Team Collaboration</h2>
+
+  <div class="top-images">
+    <img src="OIP (3).webp">
+  </div>
+
+
+       
+  <h2>Adaptability & Quick Learning</h2>
+
+  <div class="top-images">
+    <img src="AdobeStock_316500855-scaled.jpeg">
+
+      </ul>
+    </div>
+    <div class="card">
+      <h2>IT-Focused Skills</h2>
+      <ul>
+<div class="card">
+  <h2>software installation</h2>
+
+  <div class="top-images">
+    <img src="OIP (4).webp">
+  </div>
+
+
+       
+  <h2>understanding network basics</h2>
+
+  <div class="top-images">
+    <img src="networking-600x400-1.jpg">
+
+      </ul>
+    </div>
+  </div>
+
+<!-- PROJECTS -->
+<div id="projectsPanel" class="panel">
+  <span class="close-btn" onclick="closePanel()">✖</span>
+  <h1>My Projects</h1>
+
+  <!-- PROJECT GRID -->
+  <div class="project-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <img src="Screenshot 2025-11-21 195812.png" alt="Project 1">
+      <h3>Portfolio Website</h3>
+      <p>This portfolio was built to showcase my IT skills, creativity, and personal background.</p>
+      <button class="project-btn">View Details</button>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <img src="Screenshot 2025-11-21 195822.png" alt="System Project">
+      <h3>System Concepts</h3>
+      <p>Created mockups for systems such as inventory, grading, and simple database layouts.</p>
+      <button class="project-btn">Explore System</button>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <img src="Screenshot 2025-11-21 195829.png" alt="Cycling Log">
+      <h3>Cycling Record Tracker</h3>
+      <p>A concept app for tracking cycling distance, speed, route, and personal stats.</p>
+      <button class="project-btn">Open Project</button>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-card">
+      <img src="Screenshot 2025-11-21 195840.png" alt="Art Portfolio">
+      <h3>Digital Artworks</h3>
+      <p>A small collection of my sketches, digital edits, and visual design experiments.</p>
+      <button class="project-btn">View Gallery</button>
+    </div>
+
+  </div>
+</div>
+
+  <!-- CONTACT -->
+  <div id="contactPanel" class="panel">
+    <span class="close-btn" onclick="closePanel()">✖</span>
+    <h1>Contact</h1>
+    <div class="card">
+      <h2>Get in Touch</h2>
+      <p><strong>Email:</strong> liezertadejamendoza@example.com</p>
+      <p><strong>Phone:</strong> +63 123 asawa ni mary araw gabi, wala..........</p>
+    </div>
+  </div>
+
+  <script>
+    function openPanel(id) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('open'));
+      document.getElementById(id).classList.add('open');
+    }
+
+    function closePanel() {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('open'));
+    }
+  </script>
+</body>
+</html>
